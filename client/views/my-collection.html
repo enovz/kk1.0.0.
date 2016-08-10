@@ -1,0 +1,36 @@
+<h2>Collection files</h2>
+		<a href="/public/logout" class="btn btn-danger"> Log out</a>
+<br><br><br>
+<table class="table"> 	
+	<tr>
+		  <td>
+        <div class="form-group">
+        <input type="file" name="filefiled" file-model="videoData.file">
+    	  </div>
+    	 	<button type="submit" class="btn btn-default" ng-click="upload()">Upload</button>
+      </td>
+      <td><input class="form-control" ng-model="videoData.filename"></td>
+    	<td><button class="btn btn-info" ng-click="update()">Update</button></td>
+	</tr>
+</table>
+ <table class="table">
+      <thead>
+        <tr>
+          <th>Video Name</th>         
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="video in videos">
+          <td>{{video.filename}}</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><button class="btn btn-danger" ng-click="remove(video)">Remove</button></td>
+          <td><button class="btn btn-info" ng-click ="download(video)">Download</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(video)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>

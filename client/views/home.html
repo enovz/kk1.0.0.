@@ -1,0 +1,27 @@
+<div class="jumbotron text-center">
+    <h1><span class="fa fa-lock"></span> Node Authentication</h1>
+
+    <p>Login or Register with:</p>
+    <a href="/public/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+  </div>
+  <br>
+
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Collection Name</th>         
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="collection in collections">
+          <td>{{collection.title}}</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><button class="btn btn-danger" ng-click="open(collection)">Open</button></td>
+        </tr>
+      </tbody>
+    </table>

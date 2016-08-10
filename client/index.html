@@ -1,0 +1,62 @@
+<!doctype>
+<html ng-app="myApp">
+<head>
+  <title>Movie Collector</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  <style>
+    body    { padding-top:80px; }
+    a {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: none;
+    text-decoration-style: none;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container" ng-view>
+<!--
+  <div class="jumbotron text-center">
+    <h1><span class="fa fa-lock"></span> Node Authentication</h1>
+
+    <p>Login or Register with:</p>
+    <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+  </div>
+  <br>
+
+  <table class="table" ng-controller="indexController">
+      <thead>
+        <tr>
+          <th>Collection Name</th>         
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="collection in collections">
+          <td>{{collection.title}}</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><button class="btn btn-danger" ng-click="remove(collection._id)">Open</button></td>
+        </tr>
+      </tbody>
+    </table>
+    -->
+</div>
+
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-route/angular-route.min.js"></script>
+
+  <script src="app.js"></script>
+  <script src="/controllers/homeController.js"></script>
+  <script src="/controllers/collectionController.js"></script>
+  <script src="/controllers/myCollectionsController.js"></script>
+  <script src="/controllers/myCollectionController.js"></script>
+  <script src="/directive/fileModel.js"></script>
+
+</body>
+</html>
