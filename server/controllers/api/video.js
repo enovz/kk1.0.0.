@@ -10,11 +10,6 @@ var gfs = new Grid(mongoose.connection.db);
 
 var video = {
   read: function(req, res, next){
-  //   var videoId = mongoose.Types.ObjectId(req.params.videoId);
-  //        gfs.files.findOne({'_id' : videoId}, function(err,file){
-  //        if (err)throw err;
-  //        res.json(file);          
-  //  });
     var videoId = mongoose.Types.ObjectId(req.params.videoId);
     gfs.files.find({ '_id': videoId }).toArray(function (err, files) {
       console.log('I have found this file: ' + files[0].filename);
@@ -23,33 +18,15 @@ var video = {
         message: 'File not found'
       });
       }
-  
-    //res.writeHead(200, {'Content-Type': files[0].contentType});
-    console.log('length of file found : ' + files.length); // file length
-    console.log('length of file[0] is : ' + files[0].length);
-    console.log('_id of file[0] is : ' + files[0]._id);
-    console.log('contentType of file[0] is : ' + files[0].contentType);
-    console.log('encoding format of file[0] is : ' + files[0].format);
-
-    // var readstream = gfs.createReadStream({
-    //    _id: files[0]._id
-    //
-    //    });
-
         var mimetype = mime.lookup(files[0].contentType);
         //mime type config  
         res.setHeader('Content-disposition', 'attachment; filename=' + files[0].filename);
         res.setHeader('Content-type', files[0].contentType);
 
-      //readstream.pipe(res);
       var readstream = gfs.createReadStream({
         _id: files[0]._id
-
       });
       readstream.pipe(res);
-      //readstream.on('data', function(data) {
-      //    res.write(data);
-      //});
       
       readstream.on('end', function() {
           res.end();        
