@@ -1,5 +1,4 @@
-# kk1.0.0.
-Sample of Movie Collector
+# video collector
 Work in progress...
-API and Client for video upload and download with google authentication.
+API and client for video upload and download with google authentication.
 
